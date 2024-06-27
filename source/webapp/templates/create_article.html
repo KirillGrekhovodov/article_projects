@@ -16,6 +16,11 @@
     <label>Author:</label><br/>
     <input type="text" name="author"/><br/>
     <br/>
+    <select name="section_id" id="">
+        {% for section in sections %}
+            <option value="{{ section.id }}">{{ section.title }}</option>
+        {% endfor %}
+    </select>
     <input type="submit" value="Send"/>
 </form>
 {% endblock %}
