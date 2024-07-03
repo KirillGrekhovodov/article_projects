@@ -29,6 +29,7 @@ class Article(models.Model):
         verbose_name="Секция",
         related_name="articles",  # article_set,
     )
+    publish_date = models.DateField(verbose_name="Дата публикации", null=True, blank=True)
 
     def __str__(self):
         return f"{self.pk}. {self.title}: {self.author}"

@@ -20,7 +20,10 @@ def create_article(request):
             article = Article.objects.create(
                 title=form.cleaned_data['title'],
                 content=form.cleaned_data["content"],
-                author=form.cleaned_data["author"]
+                author=form.cleaned_data["author"],
+                status=form.cleaned_data["status"],
+                section=form.cleaned_data["section"],
+                publish_date=form.cleaned_data["publish_date"],
             )
             return redirect("article_detail", pk=article.pk)
 
@@ -43,6 +46,9 @@ def update_article(request, *args, pk, **kwargs):
             "title": article.title,
             "author": article.author,
             "content": article.content,
+            "status": article.status,
+            "section": article.section,
+            "publish_date": article.publish_date,
         })
         return render(
             request, "update_article.html",
@@ -55,6 +61,9 @@ def update_article(request, *args, pk, **kwargs):
             article.title = form.cleaned_data['title']
             article.content = form.cleaned_data['content']
             article.author = form.cleaned_data['author']
+            article.status = form.cleaned_data["status"]
+            article.section = form.cleaned_data["section"]
+            article.publish_date = form.cleaned_data["publish_date"]
             article.save()
             return redirect("article_detail", pk=article.pk)
         else:
