@@ -17,6 +17,7 @@
             <p class="card-text">{{ article.content }}</p>
             <p class="card-text">{{ article.created_at|date:'Y-m-d' }}</p>
             <p class="card-text">{{ article.get_status_display }}</p>
+            <p class="card-text">{{ article.section.title }}</p>
             <a href="{% url 'articles' %}" class="card-link">На главную</a>
         </div>
     </div>

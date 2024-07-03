@@ -1,68 +1,260 @@
 [
 {
-  "model": "webapp.article",
-  "pk": 2,
-  "fields": {
-    "title": "Статья2",
-    "author": "Кирилл",
-    "content": "Контент2",
-    "created_at": "2024-06-20T13:49:52.857Z",
-    "updated_at": "2024-06-20T13:49:52.857Z"
-  }
+    "model": "webapp.section",
+    "pk": 1,
+    "fields": {
+        "title": "Секция 1",
+        "description": null
+    }
 },
 {
-  "model": "webapp.article",
-  "pk": 3,
-  "fields": {
-    "title": "тест",
-    "author": "Неизвестный",
-    "content": "тест контент",
-    "created_at": "2024-06-20T13:53:59.080Z",
-    "updated_at": "2024-06-20T13:53:59.080Z"
-  }
+    "model": "webapp.section",
+    "pk": 2,
+    "fields": {
+        "title": "Секция 2",
+        "description": null
+    }
 },
 {
-  "model": "webapp.article",
-  "pk": 4,
-  "fields": {
-    "title": "статья",
-    "author": "Неизвестный",
-    "content": "ddd",
-    "created_at": "2024-06-20T14:01:33.093Z",
-    "updated_at": "2024-06-20T14:03:14.241Z"
-  }
+    "model": "webapp.section",
+    "pk": 3,
+    "fields": {
+        "title": "Ctrwbz 4",
+        "description": null
+    }
 },
 {
-  "model": "webapp.article",
-  "pk": 5,
-  "fields": {
-    "title": "",
-    "author": "Неизвестный",
-    "content": "",
-    "created_at": "2024-06-20T14:23:19.162Z",
-    "updated_at": "2024-06-20T14:23:19.163Z"
-  }
+    "model": "webapp.article",
+    "pk": 2,
+    "fields": {
+        "title": "Статья2",
+        "author": "Кирилл",
+        "content": "Контент2",
+        "created_at": "2024-06-20T13:49:52.857Z",
+        "updated_at": "2024-06-27T13:34:17.533Z",
+        "status": "new",
+        "section": 3
+    }
 },
 {
-  "model": "webapp.article",
-  "pk": 6,
-  "fields": {
-    "title": "новая статья",
-    "author": "Неизвестный",
-    "content": "новый контент",
-    "created_at": "2024-06-20T14:24:42.707Z",
-    "updated_at": "2024-06-20T14:24:42.707Z"
-  }
+    "model": "webapp.article",
+    "pk": 3,
+    "fields": {
+        "title": "тест",
+        "author": "Неизвестный",
+        "content": "тест контент",
+        "created_at": "2024-06-20T13:53:59.080Z",
+        "updated_at": "2024-06-20T13:53:59.080Z",
+        "status": "new",
+        "section": 1
+    }
 },
 {
-  "model": "webapp.article",
-  "pk": 8,
-  "fields": {
-    "title": "ldldld",
-    "author": "xsaxsaxsa",
-    "content": "saxsaxsa",
-    "created_at": "2024-06-20T14:38:17.467Z",
-    "updated_at": "2024-06-20T14:38:17.467Z"
-  }
+    "model": "webapp.article",
+    "pk": 4,
+    "fields": {
+        "title": "статья",
+        "author": "Неизвестный",
+        "content": "ddd",
+        "created_at": "2024-06-20T14:01:33.093Z",
+        "updated_at": "2024-06-20T14:03:14.241Z",
+        "status": "new",
+        "section": 1
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 5,
+    "fields": {
+        "title": "",
+        "author": "Неизвестный",
+        "content": "",
+        "created_at": "2024-06-20T14:23:19.162Z",
+        "updated_at": "2024-06-20T14:23:19.163Z",
+        "status": "new",
+        "section": 1
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 6,
+    "fields": {
+        "title": "новая статья",
+        "author": "Неизвестный",
+        "content": "новый контент",
+        "created_at": "2024-06-20T14:24:42.707Z",
+        "updated_at": "2024-06-20T14:24:42.707Z",
+        "status": "new",
+        "section": 1
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 8,
+    "fields": {
+        "title": "ldldld",
+        "author": "xsaxsaxsa",
+        "content": "saxsaxsa",
+        "created_at": "2024-06-20T14:38:17.467Z",
+        "updated_at": "2024-06-20T14:38:17.467Z",
+        "status": "new",
+        "section": 1
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 9,
+    "fields": {
+        "title": "dsdd",
+        "author": "dddd",
+        "content": "dd",
+        "created_at": "2024-06-24T13:39:30.036Z",
+        "updated_at": "2024-06-24T13:39:30.037Z",
+        "status": "new",
+        "section": 1
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 10,
+    "fields": {
+        "title": "ddd",
+        "author": "ddd",
+        "content": "ddd",
+        "created_at": "2024-06-24T13:42:13.349Z",
+        "updated_at": "2024-06-24T13:42:13.349Z",
+        "status": "new",
+        "section": 1
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 11,
+    "fields": {
+        "title": "111111",
+        "author": "1111",
+        "content": "1111",
+        "created_at": "2024-06-24T13:44:05.184Z",
+        "updated_at": "2024-06-24T13:44:05.184Z",
+        "status": "new",
+        "section": 1
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 12,
+    "fields": {
+        "title": "2222",
+        "author": "2222",
+        "content": "2222",
+        "created_at": "2024-06-24T13:45:51.280Z",
+        "updated_at": "2024-06-24T13:45:51.280Z",
+        "status": "new",
+        "section": 1
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 13,
+    "fields": {
+        "title": "333",
+        "author": "333",
+        "content": "3333",
+        "created_at": "2024-06-24T13:50:43.977Z",
+        "updated_at": "2024-06-24T13:50:43.977Z",
+        "status": "new",
+        "section": 1
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 14,
+    "fields": {
+        "title": "4444",
+        "author": "444",
+        "content": "4444",
+        "created_at": "2024-06-24T13:51:30.614Z",
+        "updated_at": "2024-06-24T13:51:30.614Z",
+        "status": "new",
+        "section": 1
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 15,
+    "fields": {
+        "title": "dsv",
+        "author": "vds",
+        "content": "vdsdvs",
+        "created_at": "2024-06-24T14:36:10.075Z",
+        "updated_at": "2024-06-24T14:36:10.075Z",
+        "status": "new",
+        "section": 1
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 16,
+    "fields": {
+        "title": "dd",
+        "author": "csacsa",
+        "content": "vfvfdx.          dvscvds\r\n\r\n\r\n\r\ndsvdscdscd",
+        "created_at": "2024-06-24T14:45:48.153Z",
+        "updated_at": "2024-06-27T13:29:17.372Z",
+        "status": "new",
+        "section": 2
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 17,
+    "fields": {
+        "title": "tetete",
+        "author": "test",
+        "content": "dsz dzd",
+        "created_at": "2024-06-27T13:36:53.157Z",
+        "updated_at": "2024-06-27T13:36:53.157Z",
+        "status": "new",
+        "section": 3
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 18,
+    "fields": {
+        "title": "lalala",
+        "author": "111",
+        "content": "ssss",
+        "created_at": "2024-06-27T13:50:50.857Z",
+        "updated_at": "2024-06-27T13:50:50.857Z",
+        "status": "new",
+        "section": 2
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 19,
+    "fields": {
+        "title": " adz",
+        "author": " zx xz",
+        "content": " xz",
+        "created_at": "2024-06-27T13:51:28.868Z",
+        "updated_at": "2024-06-27T13:51:28.868Z",
+        "status": "new",
+        "section": 1
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 20,
+    "fields": {
+        "title": "dcds",
+        "author": "cdscds",
+        "content": "cdscds",
+        "created_at": "2024-06-27T13:54:02.558Z",
+        "updated_at": "2024-06-27T13:54:02.558Z",
+        "status": "new",
+        "section": 1
+    }
 }
 ]
