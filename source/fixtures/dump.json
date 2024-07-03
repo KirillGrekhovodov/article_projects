@@ -3,37 +3,8 @@
     "model": "webapp.section",
     "pk": 1,
     "fields": {
-        "title": "Секция 1",
-        "description": null
-    }
-},
-{
-    "model": "webapp.section",
-    "pk": 2,
-    "fields": {
-        "title": "Секция 2",
-        "description": null
-    }
-},
-{
-    "model": "webapp.section",
-    "pk": 3,
-    "fields": {
-        "title": "Ctrwbz 4",
-        "description": null
-    }
-},
-{
-    "model": "webapp.article",
-    "pk": 2,
-    "fields": {
-        "title": "Статья2",
-        "author": "Кирилл",
-        "content": "Контент2",
-        "created_at": "2024-06-20T13:49:52.857Z",
-        "updated_at": "2024-06-27T13:34:17.533Z",
-        "status": "new",
-        "section": 3
+        "title": "Section1",
+        "description": "Section1 description"
     }
 },
 {
@@ -46,7 +17,8 @@
         "created_at": "2024-06-20T13:53:59.080Z",
         "updated_at": "2024-06-20T13:53:59.080Z",
         "status": "new",
-        "section": 1
+        "section": 1,
+        "publish_date": null
     }
 },
 {
@@ -59,20 +31,8 @@
         "created_at": "2024-06-20T14:01:33.093Z",
         "updated_at": "2024-06-20T14:03:14.241Z",
         "status": "new",
-        "section": 1
-    }
-},
-{
-    "model": "webapp.article",
-    "pk": 5,
-    "fields": {
-        "title": "",
-        "author": "Неизвестный",
-        "content": "",
-        "created_at": "2024-06-20T14:23:19.162Z",
-        "updated_at": "2024-06-20T14:23:19.163Z",
-        "status": "new",
-        "section": 1
+        "section": 1,
+        "publish_date": null
     }
 },
 {
@@ -85,7 +45,8 @@
         "created_at": "2024-06-20T14:24:42.707Z",
         "updated_at": "2024-06-20T14:24:42.707Z",
         "status": "new",
-        "section": 1
+        "section": 1,
+        "publish_date": null
     }
 },
 {
@@ -98,7 +59,8 @@
         "created_at": "2024-06-20T14:38:17.467Z",
         "updated_at": "2024-06-20T14:38:17.467Z",
         "status": "new",
-        "section": 1
+        "section": 1,
+        "publish_date": null
     }
 },
 {
@@ -111,7 +73,8 @@
         "created_at": "2024-06-24T13:39:30.036Z",
         "updated_at": "2024-06-24T13:39:30.037Z",
         "status": "new",
-        "section": 1
+        "section": 1,
+        "publish_date": null
     }
 },
 {
@@ -124,7 +87,8 @@
         "created_at": "2024-06-24T13:42:13.349Z",
         "updated_at": "2024-06-24T13:42:13.349Z",
         "status": "new",
-        "section": 1
+        "section": 1,
+        "publish_date": null
     }
 },
 {
@@ -137,7 +101,8 @@
         "created_at": "2024-06-24T13:44:05.184Z",
         "updated_at": "2024-06-24T13:44:05.184Z",
         "status": "new",
-        "section": 1
+        "section": 1,
+        "publish_date": null
     }
 },
 {
@@ -150,111 +115,162 @@
         "created_at": "2024-06-24T13:45:51.280Z",
         "updated_at": "2024-06-24T13:45:51.280Z",
         "status": "new",
-        "section": 1
+        "section": 1,
+        "publish_date": null
     }
 },
 {
     "model": "webapp.article",
-    "pk": 13,
+    "pk": 25,
     "fields": {
-        "title": "333",
-        "author": "333",
-        "content": "3333",
-        "created_at": "2024-06-24T13:50:43.977Z",
-        "updated_at": "2024-06-24T13:50:43.977Z",
+        "title": "sss",
+        "author": "Неизвестный",
+        "content": "q",
+        "created_at": "2024-07-01T14:18:22.045Z",
+        "updated_at": "2024-07-01T14:30:26.064Z",
         "status": "new",
-        "section": 1
+        "section": 1,
+        "publish_date": null
     }
 },
 {
     "model": "webapp.article",
-    "pk": 14,
+    "pk": 27,
     "fields": {
-        "title": "4444",
-        "author": "444",
-        "content": "4444",
-        "created_at": "2024-06-24T13:51:30.614Z",
-        "updated_at": "2024-06-24T13:51:30.614Z",
+        "title": "33q",
+        "author": "3qqqqqqqqx",
+        "content": "33q",
+        "created_at": "2024-07-01T14:53:20.574Z",
+        "updated_at": "2024-07-01T15:23:24.729Z",
         "status": "new",
-        "section": 1
+        "section": 1,
+        "publish_date": null
     }
 },
 {
     "model": "webapp.article",
-    "pk": 15,
+    "pk": 28,
     "fields": {
-        "title": "dsv",
-        "author": "vds",
-        "content": "vdsdvs",
-        "created_at": "2024-06-24T14:36:10.075Z",
-        "updated_at": "2024-06-24T14:36:10.075Z",
+        "title": "qqq",
+        "author": "Неизвестный",
+        "content": "qqqq",
+        "created_at": "2024-07-01T15:15:30.063Z",
+        "updated_at": "2024-07-01T15:15:30.063Z",
         "status": "new",
-        "section": 1
+        "section": 1,
+        "publish_date": null
     }
 },
 {
     "model": "webapp.article",
-    "pk": 16,
+    "pk": 29,
     "fields": {
-        "title": "dd",
-        "author": "csacsa",
-        "content": "vfvfdx.          dvscvds\r\n\r\n\r\n\r\ndsvdscdscd",
-        "created_at": "2024-06-24T14:45:48.153Z",
-        "updated_at": "2024-06-27T13:29:17.372Z",
+        "title": "ddd",
+        "author": "Неизвестный",
+        "content": "ddd",
+        "created_at": "2024-07-03T13:03:21.498Z",
+        "updated_at": "2024-07-03T13:03:21.498Z",
         "status": "new",
-        "section": 2
+        "section": 1,
+        "publish_date": null
     }
 },
 {
     "model": "webapp.article",
-    "pk": 17,
+    "pk": 31,
     "fields": {
-        "title": "tetete",
-        "author": "test",
-        "content": "dsz dzd",
-        "created_at": "2024-06-27T13:36:53.157Z",
-        "updated_at": "2024-06-27T13:36:53.157Z",
-        "status": "new",
-        "section": 3
+        "title": "test1",
+        "author": "Неизвестный",
+        "content": "test1",
+        "created_at": "2024-07-03T13:31:44.537Z",
+        "updated_at": "2024-07-03T13:33:18.332Z",
+        "status": "deleted",
+        "section": 1,
+        "publish_date": null
     }
 },
 {
     "model": "webapp.article",
-    "pk": 18,
+    "pk": 32,
     "fields": {
-        "title": "lalala",
-        "author": "111",
-        "content": "ssss",
-        "created_at": "2024-06-27T13:50:50.857Z",
-        "updated_at": "2024-06-27T13:50:50.857Z",
-        "status": "new",
-        "section": 2
+        "title": "dasss",
+        "author": "Неизвестный",
+        "content": "xsssss",
+        "created_at": "2024-07-03T13:42:04.373Z",
+        "updated_at": "2024-07-03T13:45:08.939Z",
+        "status": "moderated",
+        "section": 1,
+        "publish_date": "2024-07-11"
     }
 },
 {
     "model": "webapp.article",
-    "pk": 19,
+    "pk": 33,
     "fields": {
-        "title": " adz",
-        "author": " zx xz",
-        "content": " xz",
-        "created_at": "2024-06-27T13:51:28.868Z",
-        "updated_at": "2024-06-27T13:51:28.868Z",
+        "title": "new article",
+        "author": "Неизвестный",
+        "content": "zssss",
+        "created_at": "2024-07-03T14:24:35.548Z",
+        "updated_at": "2024-07-03T14:24:35.548Z",
         "status": "new",
-        "section": 1
+        "section": 1,
+        "publish_date": "2024-07-19"
     }
 },
 {
     "model": "webapp.article",
-    "pk": 20,
+    "pk": 34,
     "fields": {
-        "title": "dcds",
-        "author": "cdscds",
-        "content": "cdscds",
-        "created_at": "2024-06-27T13:54:02.558Z",
-        "updated_at": "2024-06-27T13:54:02.558Z",
+        "title": "22222",
+        "author": "Неизвестный",
+        "content": "22222w",
+        "created_at": "2024-07-03T14:25:13.744Z",
+        "updated_at": "2024-07-03T14:25:13.744Z",
         "status": "new",
-        "section": 1
+        "section": 1,
+        "publish_date": "2024-07-25"
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 35,
+    "fields": {
+        "title": "2222233333333",
+        "author": "Неизвестный",
+        "content": "22222w",
+        "created_at": "2024-07-03T14:26:41.852Z",
+        "updated_at": "2024-07-03T14:26:41.852Z",
+        "status": "new",
+        "section": 1,
+        "publish_date": "2024-07-27"
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 36,
+    "fields": {
+        "title": "2222233333333",
+        "author": "Неизвестный",
+        "content": "22222w",
+        "created_at": "2024-07-03T14:27:24.975Z",
+        "updated_at": "2024-07-03T14:27:24.975Z",
+        "status": "new",
+        "section": 1,
+        "publish_date": "2024-07-28"
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 37,
+    "fields": {
+        "title": "2222233333333",
+        "author": "Неизвестный",
+        "content": "22222w",
+        "created_at": "2024-07-03T14:27:50.603Z",
+        "updated_at": "2024-07-03T14:27:50.604Z",
+        "status": "new",
+        "section": 1,
+        "publish_date": "2024-07-22"
     }
 }
 ]
