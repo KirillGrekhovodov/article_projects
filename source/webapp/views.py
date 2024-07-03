@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from webapp.forms import ArticleForm
 from webapp.models import Article
-from webapp.validate import article_validate
 
 
 def index(request):
@@ -17,14 +16,7 @@ def create_article(request):
     else:
         form = ArticleForm(data=request.POST)
         if form.is_valid():
-            article = Article.objects.create(
-                title=form.cleaned_data['title'],
-                content=form.cleaned_data["content"],
-                author=form.cleaned_data["author"],
-                status=form.cleaned_data["status"],
-                section=form.cleaned_data["section"],
-                publish_date=form.cleaned_data["publish_date"],
-            )
+            article = form.save()
             return redirect("article_detail", pk=article.pk)
 
         return render(
@@ -42,14 +34,7 @@ def article_detail(request, *args, pk, **kwargs):
 def update_article(request, *args, pk, **kwargs):
     if request.method == "GET":
         article = get_object_or_404(Article, pk=pk)
-        form = ArticleForm(initial={
-            "title": article.title,
-            "author": article.author,
-            "content": article.content,
-            "status": article.status,
-            "section": article.section,
-            "publish_date": article.publish_date,
-        })
+        form = ArticleForm(instance=article)
         return render(
             request, "update_article.html",
             context={"form": form}
@@ -57,14 +42,7 @@ def update_article(request, *args, pk, **kwargs):
     else:
         form = ArticleForm(data=request.POST)
         if form.is_valid():
-            article = get_object_or_404(Article, pk=pk)
-            article.title = form.cleaned_data['title']
-            article.content = form.cleaned_data['content']
-            article.author = form.cleaned_data['author']
-            article.status = form.cleaned_data["status"]
-            article.section = form.cleaned_data["section"]
-            article.publish_date = form.cleaned_data["publish_date"]
-            article.save()
+            article = form.save()
             return redirect("article_detail", pk=article.pk)
         else:
             return render(
