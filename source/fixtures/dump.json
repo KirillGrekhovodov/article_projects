@@ -15,10 +15,11 @@
         "author": "Неизвестный",
         "content": "тест контент",
         "created_at": "2024-06-20T13:53:59.080Z",
-        "updated_at": "2024-06-20T13:53:59.080Z",
+        "updated_at": "2024-07-04T13:36:10.398Z",
         "status": "new",
         "section": 1,
-        "publish_date": null
+        "publish_date": null,
+        "slug": "test"
     }
 },
 {
@@ -29,10 +30,11 @@
         "author": "Неизвестный",
         "content": "ddd",
         "created_at": "2024-06-20T14:01:33.093Z",
-        "updated_at": "2024-06-20T14:03:14.241Z",
+        "updated_at": "2024-07-04T13:36:10.394Z",
         "status": "new",
         "section": 1,
-        "publish_date": null
+        "publish_date": null,
+        "slug": "statia"
     }
 },
 {
@@ -43,10 +45,11 @@
         "author": "Неизвестный",
         "content": "новый контент",
         "created_at": "2024-06-20T14:24:42.707Z",
-        "updated_at": "2024-06-20T14:24:42.707Z",
+        "updated_at": "2024-07-04T13:36:10.396Z",
         "status": "new",
         "section": 1,
-        "publish_date": null
+        "publish_date": null,
+        "slug": "novaia-statia"
     }
 },
 {
@@ -57,10 +60,11 @@
         "author": "xsaxsaxsa",
         "content": "saxsaxsa",
         "created_at": "2024-06-20T14:38:17.467Z",
-        "updated_at": "2024-06-20T14:38:17.467Z",
+        "updated_at": "2024-07-04T13:21:53.526Z",
         "status": "new",
         "section": 1,
-        "publish_date": null
+        "publish_date": null,
+        "slug": "ldldld"
     }
 },
 {
@@ -71,10 +75,11 @@
         "author": "dddd",
         "content": "dd",
         "created_at": "2024-06-24T13:39:30.036Z",
-        "updated_at": "2024-06-24T13:39:30.037Z",
+        "updated_at": "2024-07-04T13:21:53.521Z",
         "status": "new",
         "section": 1,
-        "publish_date": null
+        "publish_date": null,
+        "slug": "dsdd"
     }
 },
 {
@@ -85,10 +90,11 @@
         "author": "ddd",
         "content": "ddd",
         "created_at": "2024-06-24T13:42:13.349Z",
-        "updated_at": "2024-06-24T13:42:13.349Z",
+        "updated_at": "2024-07-04T13:21:53.515Z",
         "status": "new",
         "section": 1,
-        "publish_date": null
+        "publish_date": null,
+        "slug": "ddd"
     }
 },
 {
@@ -99,10 +105,11 @@
         "author": "1111",
         "content": "1111",
         "created_at": "2024-06-24T13:44:05.184Z",
-        "updated_at": "2024-06-24T13:44:05.184Z",
+        "updated_at": "2024-07-04T13:21:53.526Z",
         "status": "new",
         "section": 1,
-        "publish_date": null
+        "publish_date": null,
+        "slug": "111111"
     }
 },
 {
@@ -113,10 +120,11 @@
         "author": "2222",
         "content": "2222",
         "created_at": "2024-06-24T13:45:51.280Z",
-        "updated_at": "2024-06-24T13:45:51.280Z",
+        "updated_at": "2024-07-04T13:21:53.528Z",
         "status": "new",
         "section": 1,
-        "publish_date": null
+        "publish_date": null,
+        "slug": "2222"
     }
 },
 {
@@ -127,10 +135,11 @@
         "author": "Неизвестный",
         "content": "q",
         "created_at": "2024-07-01T14:18:22.045Z",
-        "updated_at": "2024-07-01T14:30:26.064Z",
+        "updated_at": "2024-07-04T13:21:53.527Z",
         "status": "new",
         "section": 1,
-        "publish_date": null
+        "publish_date": null,
+        "slug": "sss"
     }
 },
 {
@@ -141,10 +150,11 @@
         "author": "3qqqqqqqqx",
         "content": "33q",
         "created_at": "2024-07-01T14:53:20.574Z",
-        "updated_at": "2024-07-01T15:23:24.729Z",
+        "updated_at": "2024-07-04T13:21:53.522Z",
         "status": "new",
         "section": 1,
-        "publish_date": null
+        "publish_date": null,
+        "slug": "33q"
     }
 },
 {
@@ -155,24 +165,26 @@
         "author": "Неизвестный",
         "content": "qqqq",
         "created_at": "2024-07-01T15:15:30.063Z",
-        "updated_at": "2024-07-01T15:15:30.063Z",
+        "updated_at": "2024-07-04T13:21:53.524Z",
         "status": "new",
         "section": 1,
-        "publish_date": null
+        "publish_date": null,
+        "slug": "qqq"
     }
 },
 {
     "model": "webapp.article",
     "pk": 29,
     "fields": {
-        "title": "ddd",
+        "title": "ddd1",
         "author": "Неизвестный",
         "content": "ddd",
         "created_at": "2024-07-03T13:03:21.498Z",
-        "updated_at": "2024-07-03T13:03:21.498Z",
+        "updated_at": "2024-07-04T13:21:53.494Z",
         "status": "new",
         "section": 1,
-        "publish_date": null
+        "publish_date": null,
+        "slug": "ddd1"
     }
 },
 {
@@ -183,10 +195,11 @@
         "author": "Неизвестный",
         "content": "test1",
         "created_at": "2024-07-03T13:31:44.537Z",
-        "updated_at": "2024-07-03T13:33:18.332Z",
+        "updated_at": "2024-07-04T13:21:53.529Z",
         "status": "deleted",
         "section": 1,
-        "publish_date": null
+        "publish_date": null,
+        "slug": "test1"
     }
 },
 {
@@ -197,10 +210,11 @@
         "author": "Неизвестный",
         "content": "xsssss",
         "created_at": "2024-07-03T13:42:04.373Z",
-        "updated_at": "2024-07-03T13:45:08.939Z",
+        "updated_at": "2024-07-04T13:21:53.529Z",
         "status": "moderated",
         "section": 1,
-        "publish_date": "2024-07-11"
+        "publish_date": "2024-07-11",
+        "slug": "dasss"
     }
 },
 {
@@ -211,10 +225,11 @@
         "author": "Неизвестный",
         "content": "zssss",
         "created_at": "2024-07-03T14:24:35.548Z",
-        "updated_at": "2024-07-03T14:24:35.548Z",
+        "updated_at": "2024-07-04T13:21:53.532Z",
         "status": "new",
         "section": 1,
-        "publish_date": "2024-07-19"
+        "publish_date": "2024-07-19",
+        "slug": "new-article"
     }
 },
 {
@@ -225,52 +240,161 @@
         "author": "Неизвестный",
         "content": "22222w",
         "created_at": "2024-07-03T14:25:13.744Z",
-        "updated_at": "2024-07-03T14:25:13.744Z",
+        "updated_at": "2024-07-04T13:21:53.536Z",
         "status": "new",
         "section": 1,
-        "publish_date": "2024-07-25"
+        "publish_date": "2024-07-25",
+        "slug": "22222"
     }
 },
 {
     "model": "webapp.article",
     "pk": 35,
     "fields": {
-        "title": "2222233333333",
+        "title": "aaa",
         "author": "Неизвестный",
         "content": "22222w",
         "created_at": "2024-07-03T14:26:41.852Z",
-        "updated_at": "2024-07-03T14:26:41.852Z",
+        "updated_at": "2024-07-04T13:21:53.546Z",
         "status": "new",
         "section": 1,
-        "publish_date": "2024-07-27"
+        "publish_date": "2024-07-27",
+        "slug": "aaa"
     }
 },
 {
     "model": "webapp.article",
     "pk": 36,
     "fields": {
-        "title": "2222233333333",
+        "title": "dd",
         "author": "Неизвестный",
         "content": "22222w",
         "created_at": "2024-07-03T14:27:24.975Z",
-        "updated_at": "2024-07-03T14:27:24.975Z",
+        "updated_at": "2024-07-04T13:21:53.546Z",
         "status": "new",
         "section": 1,
-        "publish_date": "2024-07-28"
+        "publish_date": "2024-07-28",
+        "slug": "dd"
     }
 },
 {
     "model": "webapp.article",
     "pk": 37,
     "fields": {
-        "title": "2222233333333",
+        "title": "qq",
         "author": "Неизвестный",
         "content": "22222w",
         "created_at": "2024-07-03T14:27:50.603Z",
-        "updated_at": "2024-07-03T14:27:50.604Z",
+        "updated_at": "2024-07-04T13:21:53.547Z",
         "status": "new",
         "section": 1,
-        "publish_date": "2024-07-22"
+        "publish_date": "2024-07-22",
+        "slug": "qq"
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 38,
+    "fields": {
+        "title": "test",
+        "author": "Неизвестный",
+        "content": "content",
+        "created_at": "2024-07-04T13:10:22.013Z",
+        "updated_at": "2024-07-04T13:21:53.545Z",
+        "status": "new",
+        "section": 1,
+        "publish_date": null,
+        "slug": "test_1"
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 39,
+    "fields": {
+        "title": "test Article",
+        "author": "Неизвестный",
+        "content": "content",
+        "created_at": "2024-07-04T13:13:13.754Z",
+        "updated_at": "2024-07-04T13:21:53.514Z",
+        "status": "new",
+        "section": 1,
+        "publish_date": null,
+        "slug": "test-article"
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 40,
+    "fields": {
+        "title": "Article test lala",
+        "author": "Неизвестный",
+        "content": "cascsa",
+        "created_at": "2024-07-04T13:14:26.730Z",
+        "updated_at": "2024-07-04T13:21:53.545Z",
+        "status": "new",
+        "section": 1,
+        "publish_date": null,
+        "slug": "article-test-lala"
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 41,
+    "fields": {
+        "title": "test article new",
+        "author": "Неизвестный",
+        "content": "cddsazcd",
+        "created_at": "2024-07-04T13:32:41.888Z",
+        "updated_at": "2024-07-04T13:32:41.889Z",
+        "status": "new",
+        "section": 1,
+        "publish_date": null,
+        "slug": "test-article-new"
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 42,
+    "fields": {
+        "title": "русский текст зло",
+        "author": "Неизвестный",
+        "content": "cddsazcd",
+        "created_at": "2024-07-04T13:33:11.589Z",
+        "updated_at": "2024-07-04T13:33:11.589Z",
+        "status": "new",
+        "section": 1,
+        "publish_date": null,
+        "slug": "russkii-tekst-zlo"
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 43,
+    "fields": {
+        "title": "русский текст злорусский текст зло",
+        "author": "Неизвестный",
+        "content": "cdacacsa",
+        "created_at": "2024-07-04T13:49:06.214Z",
+        "updated_at": "2024-07-04T13:49:06.214Z",
+        "status": "new",
+        "section": 1,
+        "publish_date": null,
+        "slug": "russkii-tekst-zlorus"
+    }
+},
+{
+    "model": "webapp.article",
+    "pk": 44,
+    "fields": {
+        "title": "русский текст злорусский текст зл",
+        "author": "Неизвестный",
+        "content": "csacsa",
+        "created_at": "2024-07-04T13:50:05.266Z",
+        "updated_at": "2024-07-04T13:50:05.266Z",
+        "status": "new",
+        "section": 1,
+        "publish_date": null,
+        "slug": "russkii-tekst-z-7roa"
     }
 }
 ]

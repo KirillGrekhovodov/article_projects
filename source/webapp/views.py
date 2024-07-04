@@ -17,7 +17,7 @@ def create_article(request):
         form = ArticleForm(data=request.POST)
         if form.is_valid():
             article = form.save()
-            return redirect("article_detail", pk=article.pk)
+            return redirect("article_detail", slug=article.slug)
 
         return render(
             request,
@@ -26,8 +26,8 @@ def create_article(request):
         )
 
 
-def article_detail(request, *args, pk, **kwargs):
-    article = get_object_or_404(Article, pk=pk)
+def article_detail(request, *args, slug, **kwargs):
+    article = get_object_or_404(Article, slug=slug)
     return render(request, "article_detail.html", context={"article": article})
 
 
