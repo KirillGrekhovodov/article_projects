@@ -32,15 +32,15 @@ def article_detail(request, *args, pk, **kwargs):
 
 
 def update_article(request, *args, pk, **kwargs):
+    article = get_object_or_404(Article, pk=pk)
     if request.method == "GET":
-        article = get_object_or_404(Article, pk=pk)
         form = ArticleForm(instance=article)
         return render(
             request, "update_article.html",
             context={"form": form}
         )
     else:
-        form = ArticleForm(data=request.POST)
+        form = ArticleForm(data=request.POST, instance=article)
         if form.is_valid():
             article = form.save()
             return redirect("article_detail", pk=article.pk)
