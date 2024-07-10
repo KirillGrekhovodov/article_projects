@@ -44,15 +44,7 @@ class Comment(BaseModel):
 
 
 class Tag(BaseModel):
-    name = models.CharField(max_length=31, verbose_name='Тег')
-    # articles = models.ManyToManyField(
-    #     "webapp.Article",
-    #     related_name="tags",
-    #     verbose_name="Статьи",
-    #     blank=True,
-    #     through='ArticleTag',
-    #     through_fields=["tag", "article"],
-    # )
+    name = models.CharField(max_length=31, verbose_name='Тег', unique=True)
 
     def __str__(self):
         return self.name

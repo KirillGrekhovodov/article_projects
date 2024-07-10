@@ -5,7 +5,7 @@ from webapp.models import Tag
 
 
 class ArticleForm(forms.Form):
-    title = forms.CharField(max_length=3, required=True, label="Название")
+    title = forms.CharField(max_length=50, required=True, label="Название")
     author = forms.CharField(
         max_length=50,
         required=False,
