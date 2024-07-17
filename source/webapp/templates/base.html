@@ -36,7 +36,11 @@
     </div>
 </nav>
 
+
 <div class="container">
+    {% for tag in tags %}
+        <span><a href="{% url "articles" %}?tag={{ tag.name }}">{{ tag.name }}</a></span>
+    {% endfor %}
     {% block content %}
         TEST
     {% endblock %}

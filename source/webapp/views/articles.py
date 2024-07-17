@@ -13,13 +13,14 @@ class ArticleListView(ListView):
     template_name = "articles/index.html"
     ordering = ['-created_at']
     context_object_name = "articles"
-    paginate_by = 5
+    paginate_by = 2
 
     # paginate_orphans = 2
 
     def dispatch(self, request, *args, **kwargs):
         self.form = self.get_form()
         self.search_value = self.get_search_value()
+        self.tag = self.request.GET.get('tag')
         return super().dispatch(request, *args, **kwargs)
 
     def get_form(self):
@@ -36,14 +37,22 @@ class ArticleListView(ListView):
             queryset = queryset.filter(
                 Q(title__contains=self.search_value) | Q(author__contains=self.search_value)
             )
+        if self.tag:
+            queryset = queryset.filter(tags__name=self.tag).distinct()
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["search_form"] = self.form
+        query_params = {}
         if self.search_value:
-            context["search"] = urlencode({"search": self.search_value})
+            query_params.update({"search": self.search_value})
             context["search_value"] = self.search_value
+        if self.tag:
+            query_params.update({"tag": self.tag})
+            context["tag_name"] = self.tag
+        if query_params:
+            context["search"] = urlencode(query_params)
         return context
 
 

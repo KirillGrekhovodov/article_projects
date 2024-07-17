@@ -8,6 +8,7 @@
         {% endif %}
         <form class="current-page" method="get">
             <input type="hidden" name="search" value="{{ search_value }}">
+            <input type="hidden" name="tag" value="{{ tag_name }}">
             <label for="page">
                 Страница <input type="text" name="page" id="page" value="{{ page_obj.number }}">
                 из {{ page_obj.paginator.num_pages }}.
