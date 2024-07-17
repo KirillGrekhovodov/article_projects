@@ -13,7 +13,7 @@ class ArticleListView(ListView):
     template_name = "articles/index.html"
     ordering = ['-created_at']
     context_object_name = "articles"
-    paginate_by = 2
+    paginate_by = 6
 
     # paginate_orphans = 2
 

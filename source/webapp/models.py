@@ -1,5 +1,7 @@
 from django.db import models
 
+from webapp.managers import ArticlesCommentsManager
+
 statuses = [("new", "Новая"), ("moderated", "Модерированная"), ("deleted", "Удаленная")]
 
 
@@ -25,6 +27,8 @@ class Article(BaseModel):
         through='webapp.ArticleTag',
         through_fields=("article", "tag"),
     )
+
+    objects = ArticlesCommentsManager()
 
 
     def __str__(self):
