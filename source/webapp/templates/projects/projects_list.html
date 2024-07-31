@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Projects</title>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    {% for project in projects %}
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card mt-3" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.title }}</h5>
+
+                    <div class="btn-group" role="group">
+                        <a href="{% url "webapp:project_detail" project.pk %}" class="btn btn-primary"><i
+                                class="bi bi-blockquote-right"></i></a>
+{#                        {% if perms.webapp.change_project or request.user == project.author %}#}
+{#                            <a href="{% url "webapp:update_project" project.pk %}"#}
+{#                               class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>#}
+{#                        {% endif %}#}
+{#                        {% if perms.webapp.delete_project %}#}
+{#                            <a href="{% url "webapp:delete_project" project.pk %}" class="btn btn-primary"><i#}
+{#                                    class="bi bi-trash3"></i></a>#}
+{#                        {% endif %}#}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <h2>проекты не найдены</h2>
+    {% endfor %}
+</div>
+{% if is_paginated %}
+    {% include "partial/pagination.html" %}
+{% endif %}
+{% endblock %}
+

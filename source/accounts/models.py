@@ -10,10 +10,11 @@ def avatar_path(instance, filename):
     return f'avatars/{instance.user.id}/{filename}'
 
 
-def avatar_size_validate(value):
-    size = value.file.size
-    if size > 5000:
-        raise ValidationError("File too big")
+# def avatar_size_validate(value):
+#     print(type(value), "validation")
+#     size = value.file.size
+#     if size > 3000:
+#         raise ValidationError("File too big")
 
 
 class Profile(models.Model):
@@ -24,10 +25,7 @@ class Profile(models.Model):
         blank=True,
         upload_to=avatar_path,
         verbose_name='Аватар',
-        # validators=[
-        #     FileExtensionValidator(['png'], "Можно загружать только png файлы"),
-        #     avatar_size_validate
-        # ]
+        # validators=[avatar_size_validate]
     )
 
     def __str__(self):

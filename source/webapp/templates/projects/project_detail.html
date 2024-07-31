@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block links %}
+    {% if perms.webapp.change_project and request.user in project.users.all %}
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'webapp:update_project' project.pk %}">Редактировать</a>
+        </li>
+    {% endif %}
+    {% if perms.webapp.add_users_in_project and request.user in project.users.all %}
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'webapp:add_users_in_project' project.pk %}">Добавить
+                пользователей</a>
+        </li>
+    {% endif %}
+
+
+    {#    <li class="nav-item">#}
+    {#        <a class="nav-link active" aria-current="page" href="{% url 'webapp:delete_article' article.pk %}">Удалить</a>#}
+    {#    </li>#}
+{% endblock %}
+
+{% block content %}
+    <div class="card mt-3 text-center" style="">
+        <div class="card-body">
+            <h5 class="card-title">Название: {{ project.title }}</h5>
+            <p>Теги:
+                {% for user in project.users.all %}
+                    {{ user.username }}{% if forloop.last %}. {% else %}, {% endif %}
+                    {% empty %}
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+{% endblock %}

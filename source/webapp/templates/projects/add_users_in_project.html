@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block links %}
+{% endblock %}
+
+{% block content %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {% include 'partial/form.html' with button_text='Сохранить юзеров в проекте' %}
+    </form>
+{% endblock %}
