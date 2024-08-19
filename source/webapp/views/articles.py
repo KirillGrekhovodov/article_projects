@@ -64,7 +64,10 @@ class CreateArticleView(LoginRequiredMixin, CreateView):
 
 class TestJsView(View):
     def get(self, request, *args, **kwargs):
-        return JsonResponse({"test": "test", "test1": [1, 2, 3]})
+        return JsonResponse({"test": "test", "method": "GET"})
+
+    def post(self, request, *args, **kwargs):
+        return JsonResponse({"method": "POST"})
 
 
 class ArticleDetailView(DetailView):
