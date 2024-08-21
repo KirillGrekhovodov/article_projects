@@ -28,6 +28,8 @@ class Article(BaseModel):
         through_fields=("article", "tag"),
     )
 
+    likes = models.ManyToManyField(get_user_model(), related_name="articles_likes")
+
     def get_absolute_url(self):
         return reverse("webapp:article_detail", kwargs={"pk": self.pk})
 

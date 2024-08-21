@@ -1,35 +1,42 @@
-async function makeRequest(url, method="GET"){
+async function makeRequest(url, method = "GET") {
     let csrfToken = await getCookie('csrftoken')
+    let headers = {}
+    if (method !== "GET") {
+        headers['X-CSRFToken'] = csrfToken
+    }
     let response = await fetch(url,
         {
             "method": method,
-            "headers": {'X-CSRFToken': csrfToken},
+            "headers": headers,
         }
     );
-    if(response.ok){
+    if (response.ok) {
         return await response.json();
-    }
-    else{
+    } else {
         let error = new Error(response.text);
         console.log(error);
         throw error;
     }
 }
 
-async function onClick(event){
+async function onClick(event) {
     event.preventDefault();
     let a = event.target;
     let url = a.href;
-    let response = await makeRequest(url, "POST");
-    console.log(a.parentElement)
+    let button_text = a.innerText;
+    let method = "POST";
+    if (button_text === "Дизлайк") {
+        method = "DELETE"
+    }
+    let response = await makeRequest(url, method);
     let span = a.parentElement.getElementsByTagName("span")[0]
-    span.innerText = response.test
-    console.log(response)
+    span.innerText = response.likes_count
+    a.innerText = button_text === "Дизлайк" ? "Лайк" : "Дизлайк"
 }
 
-function onLoad(){
-    let links= document.querySelectorAll('[data-js="js"]');
-    for (let link of links){
+function onLoad() {
+    let links = document.querySelectorAll('[data-like="like"]');
+    for (let link of links) {
         link.addEventListener("click", onClick);
     }
 }

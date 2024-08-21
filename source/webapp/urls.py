@@ -3,7 +3,8 @@ from django.views.generic import RedirectView
 
 from webapp.views import UpdateArticleView, DeleteArticleView, ArticleListView, CreateArticleView, \
     ArticleDetailView, CreateCommentView, UpdateCommentView, DeleteCommentView
-from webapp.views.articles import TestJsView
+from webapp.views.articles import ArticleLikeView
+from webapp.views.comments import CommentLikeView
 
 app_name = 'webapp'
 
@@ -17,5 +18,6 @@ urlpatterns = [
     path('article/<int:pk>/comment/create/', CreateCommentView.as_view(), name='create_comment'),
     path('comment/<int:pk>/update/', UpdateCommentView.as_view(), name='update_comment'),
     path('comment/<int:pk>/delete/', DeleteCommentView.as_view(), name='delete_comment'),
-    path('article/<int:pk>/test/js/', TestJsView.as_view(), name='test_js'),
+    path('article/<int:pk>/like/', ArticleLikeView.as_view(), name='article_like'),
+    path('comment/<int:pk>/like/', CommentLikeView.as_view(), name='comment_like'),
 ]

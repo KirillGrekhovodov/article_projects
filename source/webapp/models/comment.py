@@ -16,6 +16,8 @@ class Comment(BaseModel):
         default=1
     )
 
+    likes = models.ManyToManyField(get_user_model(), related_name="comments_likes")
+
     def __str__(self):
         return self.text[:20]
 

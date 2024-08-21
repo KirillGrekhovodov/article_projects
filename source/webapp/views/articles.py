@@ -2,7 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.core.exceptions import PermissionDenied
 from django.db.models import Q
 from django.http import JsonResponse
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils.http import urlencode
 from django.views import View
@@ -62,12 +62,16 @@ class CreateArticleView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class TestJsView(View):
-    def get(self, request, *args, **kwargs):
-        return JsonResponse({"test": "test", "method": "GET"})
+class ArticleLikeView(View):
+    def post(self, request, *args, pk, **kwargs):
+        article = get_object_or_404(Article, pk=pk)
+        article.likes.add(request.user)
+        return JsonResponse({"likes_count": article.likes.count()})
 
-    def post(self, request, *args, **kwargs):
-        return JsonResponse({"method": "POST"})
+    def delete(self, request, *args, pk, **kwargs):
+        article = get_object_or_404(Article, pk=pk)
+        article.likes.remove(request.user)
+        return JsonResponse({"likes_count": article.likes.count()})
 
 
 class ArticleDetailView(DetailView):
