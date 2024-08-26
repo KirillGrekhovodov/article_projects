@@ -23,13 +23,13 @@ from django.conf.urls.static import static
 api_routers = [
     path('v1/', include('api_v1.urls')),
     path('v2/', include('api_v2.urls')),
+    path('v3/', include('api_v3.urls')),
 ]
 
-
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include("webapp.urls")),
-    path('accounts/', include("accounts.urls")),
-    path('api/', include(api_routers)),
+                  path('admin/', admin.site.urls),
+                  path('', include("webapp.urls")),
+                  path('accounts/', include("accounts.urls")),
+                  path('api/', include(api_routers)),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
