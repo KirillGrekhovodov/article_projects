@@ -15,7 +15,8 @@ async function makeRequest(url, method = "GET", body) {
     if (response.ok) {
         return await response.json();
     } else {
-        let error = new Error(response.text);
+        response = await response.text()
+        let error = new Error(response);
         console.log(error);
         throw error;
     }
@@ -24,7 +25,7 @@ async function makeRequest(url, method = "GET", body) {
 async function onClick(event) {
     event.preventDefault();
     let body = {"title": "11111111", "content": "dscdsacsacas"};
-    let response = await makeRequest("http://localhost:8000/api/v3/articles/", "POST", body);
+    let response = await makeRequest("http://localhost:8000/api/v3/articales/", "POST", body);
     console.log(response);
     // let a = event.target;
     // let url = a.href;
