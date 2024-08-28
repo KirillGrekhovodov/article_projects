@@ -1,11 +1,12 @@
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
-from django.contrib.auth.views import PasswordChangeView
+from django.contrib.auth.views import PasswordChangeView, LoginView, LogoutView
 from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic import CreateView, DetailView, UpdateView
+from rest_framework.authtoken.models import Token
 
 from accounts.forms import MyUserCreationForm, UserChangeForm, ProfileChangeForm
 from accounts.models import Profile
@@ -21,6 +22,7 @@ class RegistrationView(CreateView):
     def form_valid(self, form):
         user = form.save()
         Profile.objects.create(user=user)
+        Token.objects.create(user=user)
         login(self.request, user)
         return HttpResponseRedirect(self.get_success_url())
 
@@ -98,3 +100,24 @@ class UserPasswordChangeView(PasswordChangeView):
 
     def get_success_url(self):
         return reverse('accounts:profile', kwargs={'pk': self.request.user.pk})
+
+
+class CustomLoginView(LoginView):
+
+    def form_valid(self, form):
+        user = form.get_user()
+        token = Token.objects.create(user=user)
+        response = super().form_valid(form)
+        response.set_cookie("token", token.key)
+        return response
+
+
+class CustomLogoutView(LogoutView):
+
+    def post(self, request, *args, **kwargs):
+        user = request.user
+        user.auth_token.delete()
+        response = super().post(request, *args, **kwargs)
+        response.delete_cookie("token")
+        return response
+

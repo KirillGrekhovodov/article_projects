@@ -17,7 +17,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
 class ArticleSerializer(serializers.ModelSerializer):
-    tags = serializers.ListSerializer(child=serializers.CharField(max_length=100))
+    tags = serializers.ListSerializer(child=serializers.CharField(max_length=100), required=False)
 
     # tags_read = TagSerializer(many=True, read_only=True, source='tags')
 

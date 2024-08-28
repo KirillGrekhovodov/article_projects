@@ -16,7 +16,7 @@ from webapp.models import Article
 class ArticleViewSet(ModelViewSet):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    permission_classes = [IsAuthenticated]
     pagination_class = ArticlePagination
     # page_size = 10
 
@@ -29,10 +29,10 @@ class ArticleViewSet(ModelViewSet):
     # def get_queryset(self):
     #     return Article.objects.filter(author=self.request.user)
 
-    def get_permissions(self):
-        if self.request.method in SAFE_METHODS and self.action != "get_comments" or self.request.user.is_superuser:
-            return []
-        return [IsOwnerOrReadOnly()]
+    # def get_permissions(self):
+    #     if self.request.method in SAFE_METHODS and self.action != "get_comments" or self.request.user.is_superuser:
+    #         return []
+    #     return [IsOwnerOrReadOnly()]
 
     def get_serializer_class(self):
         if self.action == 'list':
