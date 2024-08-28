@@ -1,21 +1,23 @@
 from django.db.models import Count
 from rest_framework.decorators import action
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, SAFE_METHODS
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
 
 from api_v2.serializers import ArticleSerializer
 from api_v2.serializers.article import ArticleShortSerializer, CommentSerializer
+from api_v3.pagination import ArticlePagination
+from api_v3.permissions import IsOwnerOrReadOnly
 from webapp.models import Article
 
 
 class ArticleViewSet(ModelViewSet):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
-    # permission_classes = []
-    # pagination_class = PageNumberPagination
+    permission_classes = [IsOwnerOrReadOnly]
+    pagination_class = ArticlePagination
     # page_size = 10
 
     def perform_create(self, serializer):
@@ -27,6 +29,11 @@ class ArticleViewSet(ModelViewSet):
     # def get_queryset(self):
     #     return Article.objects.filter(author=self.request.user)
 
+    def get_permissions(self):
+        if self.request.method in SAFE_METHODS and self.action != "get_comments" or self.request.user.is_superuser:
+            return []
+        return [IsOwnerOrReadOnly()]
+
     def get_serializer_class(self):
         if self.action == 'list':
             return ArticleShortSerializer
@@ -35,6 +42,7 @@ class ArticleViewSet(ModelViewSet):
     #http://localhost:8000/api/v3/articles/1/get_comments_count/
     @action(methods=['GET'], detail=True, url_path='comments')
     def get_comments(self, request, *args, **kwargs):
+        print(self.action, "aaaaa")
         return Response(CommentSerializer(self.get_object().comments.all(), many=True).data)
 
 

@@ -17,9 +17,21 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
 class ArticleSerializer(serializers.ModelSerializer):
+    tags = serializers.ListSerializer(child=serializers.CharField(max_length=100))
 
-    # tags = serializers.PrimaryKeyRelatedField(many=True, queryset=Tag.objects.all(), write_only=True)
     # tags_read = TagSerializer(many=True, read_only=True, source='tags')
+
+    def save(self, **kwargs):
+        tags = self.validated_data.pop('tags', [])
+        article = super().save(**kwargs)
+        if tags:
+            tags_objects = []
+            for tag_name in tags:
+                tag, _ = Tag.objects.get_or_create(name=tag_name)
+                tags_objects.append(tag)
+            article.tags.set(tags_objects)
+        return article
+
 
     def validate(self, attrs):
         return super().validate(attrs)
@@ -33,13 +45,12 @@ class ArticleSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         data = super().to_representation(instance)
         data["tags"] = TagSerializer(instance.tags.all(), many=True).data
-        print(data)
         return data
 
     class Meta:
         model = Article
         fields = ["id", "title", "content", "status", "tags", "created_at", "updated_at", "author", ]
-        read_only_fields = ["id", "created_at", "updated_at", "comments"]
+        read_only_fields = ["id", "created_at", "updated_at"]
 
 
 class ArticleShortSerializer(serializers.ModelSerializer):
