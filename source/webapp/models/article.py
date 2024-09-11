@@ -26,6 +26,9 @@ class Article(BaseModel):
         blank=True,
     )
 
+    def caclucate(self):
+        pass
+
     def get_absolute_url(self):
         return reverse("webapp:article_detail", kwargs={"pk": self.pk})
 
