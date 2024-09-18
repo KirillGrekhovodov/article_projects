@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework.authtoken',
+    'behave_django',
 
     'webapp',
     'accounts',
@@ -156,6 +157,8 @@ LOGOUT_REDIRECT_URL = "webapp:articles"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'uploads')
+
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # AUTH_USER_MODEL = 'accounts.MyUser'
 
