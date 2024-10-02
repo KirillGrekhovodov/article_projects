@@ -1,0 +1,28 @@
+services:
+
+  db:
+    image: postgres:14.3
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./source/.env
+    restart: always
+    container_name: articles_db
+    volumes:
+      - ./.volumes/db:/var/lib/postgresql/data/
+
+  web:
+    build:
+      context: .
+      dockerfile: source/Dockerfile
+    env_file:
+      - ./source/.env
+    ports:
+      - "8000:8000"
+    restart: always
+    container_name: article_web
+    volumes:
+      - ./source/:/code
+    depends_on:
+      - db
+    command: sh -c "python manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
