@@ -30,6 +30,6 @@ jobs:
           script: |    
             cd ${{ secrets.WORK_DIR }}
             echo "" > ./source/.env
-            echo TEST="TEST" >> .env       
+            echo TEST="TEST" >> ./source/.env       
             git pull     
             exit
