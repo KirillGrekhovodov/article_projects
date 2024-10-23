@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 import environ
+from celery.schedules import crontab
 
 env = environ.Env()
 
@@ -44,6 +45,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'behave_django',
+    "django_celery_beat",
+    "django_celery_results",
 
     'webapp',
     'accounts',
@@ -153,6 +156,23 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'uploads')
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
+
+CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
+CELERY_TIMEZONE = "UTC"
+CELERY_BROKER_URL = env.str("CELERY_BROKER", "redis://redis:6379/0")
+CELERY_RESULT_BACKEND = "django-db"
+CELERY_TASK_TRACK_STARTED = True
+CELERY_RESULT_EXTENDED = True
+CELERY_RESULT_EXPIRES = 60 * 60 * 24 * 3  # 3 days
+
+CELERY_BEAT_SCHEDULE = {
+    "print_text": {
+        "task": "webapp.tasks.periodic_task",
+        "schedule": crontab(minute="*"),
+    },
+}
+
 
 # AUTH_USER_MODEL = 'accounts.MyUser'
 

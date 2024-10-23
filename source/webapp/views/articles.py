@@ -8,6 +8,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 
 from webapp.forms import ArticleForm, SearchForm
 from webapp.models import Article
+from webapp.tasks import send_email_task
+from hello.tasks import print_text
 
 
 class ArticleListView(ListView):
@@ -24,6 +26,8 @@ class ArticleListView(ListView):
         print(request.user.is_authenticated, "is_authenticated")
         self.form = self.get_form()
         self.search_value = self.get_search_value()
+
+
         return super().dispatch(request, *args, **kwargs)
 
     def get_form(self):
@@ -35,6 +39,7 @@ class ArticleListView(ListView):
             return form.cleaned_data['search']
 
     def get_queryset(self):
+
         queryset = super().get_queryset()
         if self.search_value:
             queryset = queryset.filter(
@@ -65,6 +70,12 @@ class ArticleDetailView(DetailView):
     model = Article
 
     def get_context_data(self, **kwargs):
+        task_context = {
+            "login": "test",
+            "password": "test"
+        }
+        send_email_task.apply_async((1, task_context), countdown=20)
+        print_text.delay()
         context = super().get_context_data(**kwargs)
         context["comments"] = self.object.comments.order_by("-created_at")
         return context
