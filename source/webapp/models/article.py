@@ -3,13 +3,27 @@ from django.db import models
 from django.urls import reverse
 
 from webapp.models import BaseModel
+from django.utils.translation import gettext_lazy as _
 
-statuses = [("new", "Новая"), ("moderated", "Модерированная"), ("deleted", "Удаленная")]
+statuses = [
+    ("new", _("models.article.statuses: new")),
+    ("moderated", _("models.article.statuses: moderated")),
+    ("deleted", _("models.article.statuses: deleted"))
+]
 
 
 class Article(BaseModel):
-    title = models.CharField(max_length=50, null=False, blank=False, verbose_name="Название")
-    content = models.TextField(null=False, blank=False, verbose_name="Контент")
+    title = models.CharField(
+        max_length=50,
+        null=False,
+        blank=False,
+        verbose_name=_("models.article.title: title"),
+    )
+    content = models.TextField(
+        null=False,
+        blank=False,
+        verbose_name=_("models.article.title: content"),
+    )
     status = models.CharField(max_length=20, choices=statuses, verbose_name="Статус", default=statuses[0][0])
 
     author = models.ForeignKey(
@@ -37,6 +51,6 @@ class Article(BaseModel):
 
     class Meta:
         db_table = "articles"
-        verbose_name = "Статья"
-        verbose_name_plural = "Статьи"
+        verbose_name = _("models.article.verbose_name: verbose_name")
+        verbose_name_plural = _("models.article.verbose_name_plural: verbose_name_plural")
         permissions = [("change_article_status", "менять статус статье")]

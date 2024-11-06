@@ -1,8 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block content %}
     <form action="" method="post">
         {% csrf_token %}
-        Вы действительно хотите удалить статью {{ article.title }}?
+
+        {% blocktrans trimmed with title=article.title %}
+            template delete article {{ title }} ?
+        {% endblocktrans %}
         <br>
         <button type="submit">Да</button>
     </form>

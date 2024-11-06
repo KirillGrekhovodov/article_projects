@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ["138.197.59.31", "localhost", "127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
+    "modeltranslation",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,6 +59,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -78,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'webapp.context_processors.strip_language_code',
             ],
         },
     },
@@ -141,6 +144,13 @@ REST_FRAMEWORK = {
 
 LANGUAGE_CODE = 'en-us'
 
+LANGUAGES = [
+    ('en', 'English'),
+    ('ru', 'Русский'),
+]
+
+LOCALE_PATHS = (BASE_DIR / 'locale/',)
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -157,7 +167,6 @@ MEDIA_ROOT = Path.joinpath(BASE_DIR, 'uploads')
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
-
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 CELERY_TIMEZONE = "UTC"
 CELERY_BROKER_URL = env.str("CELERY_BROKER", "redis://redis:6379/0")
@@ -172,7 +181,6 @@ CELERY_BEAT_SCHEDULE = {
         "schedule": crontab(minute="*"),
     },
 }
-
 
 # AUTH_USER_MODEL = 'accounts.MyUser'
 

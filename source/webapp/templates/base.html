@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -44,7 +45,8 @@
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <p class="nav-link" >Здравствуйте <a href="{% url "accounts:profile" request.user.pk %}">{{ request.user.username }}</a></p>
+                        <p class="nav-link">Здравствуйте <a
+                                href="{% url "accounts:profile" request.user.pk %}">{{ request.user.username }}</a></p>
                     </li>
                     <li class="nav-item">
                         <form action="{% url 'accounts:logout' %}?next={{ request.get_full_path }}" method="post">
@@ -54,6 +56,22 @@
                     </li>
 
                 {% endif %}
+                <li class="nav-item dropdown">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% get_language_info for LANGUAGE_CODE as current_language %}
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">{{ current_language.name_local }}</a>
+                    <ul class="dropdown-menu">
+                        {% for language in languages %}
+                            <li><a class="dropdown-item {% if language.code == LANGUAGE_CODE %}active{% endif %}"
+                                   href="/{{ language.code }}{{ language_base_link }}">
+                                {{ language.name_local }} ({{ language.code }})
+                            </a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
